@@ -47,12 +47,16 @@ $(src)/gitversion.h: .git $(srcfiles) $(headers)
 # win32
 
 binary_win32 = $(binary).exe
+binary_win32_static = $(binary)-static.exe
 dllname_win32 = jamBashbulk.dll
 dll_win32 = $(bin)/$(dllname_win32)
-win64: $(binary_win32) $(dll_win32)
+win64: $(binary_win32) $(dll_win32) $(binary_win32_static)
 
 $(binary_win32): $(srcfiles) $(allheaders) | $(bin)
-	c++ $(o3opts) -o $(bin)/jam2D.exe $(srcfiles)
+	c++ $(o3opts) -o $(binary_win32) $(srcfiles)
+
+$(binary_win32_static): $(srcfiles) $(allheaders) | $(bin)
+    c++ $(o3opts) -o $(binary_win32_static) -static $(srcfiles)
 
 $(dll_win32): $(srcfiles) $(allheaders) | $(bin)
 	c++ -shared -Wl,-soname,$(dllname_win32) $(o3pts) -o $(dll_win32) $(srcfiles)
