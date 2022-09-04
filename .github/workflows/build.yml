@@ -15,7 +15,6 @@ jobs:
         name: linux-x64
         path: bin
 
-jobs:
   test-linux-x64:
     runs-on: ubuntu-latest
     steps:
