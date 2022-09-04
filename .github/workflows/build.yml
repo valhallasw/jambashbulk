@@ -22,7 +22,7 @@ jobs:
     - name: make linux
       run: make
     - name: create folder
-      run: mkdir Packings/N16~P1e-2
+      run: mkdir -p Packings/N16~P1e-2
     - name: Create a small packing
       run: tools/argvtolines.sh Packings/N16~P1e-2 1 1 1 2 | bin/jam2D -screen
     - uses:  actions/upload-artifact@v3.1.0
