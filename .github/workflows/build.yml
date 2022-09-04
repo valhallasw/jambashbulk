@@ -24,7 +24,7 @@ jobs:
         platform: x64
     - uses: actions/checkout@v3
     - name: make win64
-      run: make
+      run: make win64
     - uses:  actions/upload-artifact@v3.1.0
       with:
         name: win64
