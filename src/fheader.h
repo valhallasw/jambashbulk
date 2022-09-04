@@ -5,8 +5,10 @@
 #include "gitversion.h"
 
 #ifdef _WIN32
+#ifndef _WIN64
 #define PLATFORM "win32"
 typedef double LDBL;
+#endif
 #endif
 #ifdef _WIN64
 #define PLATFORM "win64"
