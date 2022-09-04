@@ -56,7 +56,7 @@ $(binary_win32): $(srcfiles) $(allheaders) | $(bin)
 	c++ $(o3opts) -o $(binary_win32) $(srcfiles)
 
 $(binary_win32_static): $(srcfiles) $(allheaders) | $(bin)
-	c++ $(o3opts) -o $(binary_win32_static) -static $(srcfiles)
+	c++ $(o3opts) -o $(binary_win32_static) -static -static-libgcc -static-libstdc++ $(srcfiles)
 
 $(dll_win32): $(srcfiles) $(allheaders) | $(bin)
 	c++ -shared -Wl,-soname,$(dllname_win32) $(o3pts) -o $(dll_win32) $(srcfiles)
